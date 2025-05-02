@@ -1,5 +1,6 @@
 <h1>User <%= @user.id %> Details</h1>
 
+
 <table>
     <tr>
         <th>Email</th>
@@ -22,5 +23,12 @@
         <td><%= @user.updated_at %></td>
     </tr>
 </table>
+<br>
+<div>
+    <%= link_to "Add new user", new_user_path %>
+</div>
+<br>
 
-<%= link_to "Back to Users", users_path%>
+<div>
+    <%= link_to "Back to Users", users_path%>
+</div>
