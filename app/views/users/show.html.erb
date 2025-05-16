@@ -1,4 +1,4 @@
-<div class = "mt-3 container ms-4">
+<div class = "mt-3container ms-4">
     <h1>User <%= @user.id %> Details</h1>
 </div>
 
@@ -26,6 +26,41 @@
         </tr>
     </table>
     <br>
+
+
+    <h3>Participates in:</h3>
+    <ul>
+        <% (@user.sent_chats + @user.received_chats).uniq.each do |chat| %>
+        <li>
+            Chat <%= chat.id %>
+        </li>
+        <% end %>
+    </ul>
+
+
+ <h3>Messages Sent</h3>
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>Chat ID</th>
+        <th>Body</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <% @user.messages.each do |message| %>
+        <tr>
+          <td><%= message.chat_id %></td>
+          <td><%= message.body %></td>
+        </tr>
+
+      <% end %>
+
+    </tbody>
+  </table>
 
     <div class = "actions">
         <%= link_to "Edit user", edit_user_path(@user), class: "btn btn-primary" %>

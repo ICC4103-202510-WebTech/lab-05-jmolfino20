@@ -7,7 +7,7 @@
 <div class = "container ms-4 col-6">
     <table class = "table table-bordered ">
         <tr>
-            <th>Sender ID</th>
+            <th>Chat ID</th>
             <td><%= @message.chat_id %></td>
         </tr>
         <tr>
@@ -15,17 +15,15 @@
             <td><%= @message.user_id %></td>
         </tr>
         <tr>
+            <th>User</th>
+            <td><%= @message.user.first_name%></td>
+        </tr>
+
+        <tr>
             <th>Body</th>
             <td><%= @message.body%></td>
         </tr>
-        <tr>
-            <th>Created At</th>
-            <td><%= @message.created_at %></td>
-        </tr>
-        <tr>
-            <th>Updated At</th>
-            <td><%= @message.updated_at %></td>
-        </tr>
+
     </table>
 
     <br>
