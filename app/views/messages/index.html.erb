@@ -1,32 +1,33 @@
-<h1>Messages</h1>
 
+<div class = "mt-3 container ms-4">
 
+    <h1>Messages</h1>
+</div>
 
-<table class = "table">
-    <tr>
-        <th>Chat ID</th>
-        <th>User ID</th>
-        <th>Body</th>
-        <th>Created At</th>
-        <th>Updated At</th>
-        <th>Show</th>
-    </tr>
+<div class = "container ms-4">
+    <table class = "table table-bordered">
+        <tr>
+            <th>Chat ID</th>
+            <th>User ID</th>
+            <th>Body</th>
+            <th>Show</th>
+            <th>Edit</th>
+        </tr>
 
-    <% @messages.each do |message| %>
-    <tr>
-        <td><%= message.chat_id %></td>
-        <td><%= message.user_id  %></td>
-        <td><%= message.body  %></td>
-        <td><%= message.created_at  %></td>
-        <td><%= message.updated_at  %></td>
-        <td><%= link_to "Show", message_path(message) %></td>
-    </tr>
+        <% @messages.each do |message| %>
+        <tr>
+            <td><%= message.chat_id %></td>
+            <td><%= message.user_id  %></td>
+            <td><%= message.body  %></td>
+            <td><%= link_to "Show", message_path(message) %></td>
+            <td><%= link_to "Edit", edit_message_path(message) %></td>
+        </tr>
 
-    <% end %>
-</table>
-    
-<br>
+        <% end %>
+    </table>
+</div>        
+    <br>
 
-<div>
-    <%= link_to "Add new Message", new_message_path %>
+<div class = "container ms-4">
+    <%= link_to "Add new Message", new_message_path, class: "mb-5 btn btn-primary"%>
 </div>

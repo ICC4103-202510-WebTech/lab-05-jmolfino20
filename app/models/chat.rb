@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
 
     def different_ids
         if sender_id == receiver_id
-            errors.add("Id's must be different")
+            errors.add(:receiver_id, "must be different from sender")
         end
     end
 
